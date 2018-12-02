@@ -1,0 +1,32 @@
+footer{
+    line-height: 50px;
+    background: #9e9e9e;
+    position: absolute;
+    width: 100%;
+}
+#bottomsaying,#logobottom{
+    margin-left: 25px;
+}
+.contact{
+    width: 50px;
+    height: 50px;
+}
+html, body {
+    height: 100%;
+
+}
+.all-container {
+    bottom: 0px;
+    min-height: 100%;
+    position: relative;}
+.main-content {
+    height: auto;
+    padding-bottom: 30px;
+}
+#down{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.ads{
+    margin-left: 15px;
+}

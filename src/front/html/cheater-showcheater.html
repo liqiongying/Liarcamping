@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>曝光骗子</title>
+    <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/cheater-header.css">
+    <link rel="stylesheet" href="../css/cheater-footer.css">
+
+
+</head>
+<body>
+<div class="all-container">
+    <div class="main-content">
+        <!--导航-->
+        @@include('include/cheater-header.html')
+        <div class="row">
+            <div class="col-md-3">
+                <!--广告位-->
+                @@include('include/ads.html')
+            </div>
+            <div class="col-md-6">
+                <!--标签页-->
+                <div>
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">曝光个人</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">曝光团伙</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">曝光公司</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content" style="padding-top: 15px;">
+                        <!--曝光个人-->
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <div>
+                                <form class="form-horizontal" method="post" action="http://uploadUrl" enctype="multipart/form-data">
+
+                                    <!--标题-->
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            文章标题
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="password" class="form-control"  placeholder="文章标题(50字以内)">
+                                        </div>
+                                    </div>
+                                    <!--骗子姓名-->
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            骗子姓名
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="password" class="form-control"  placeholder="骗子姓名,不知道可不填">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            骗子所用的联系方式
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="password" class="form-control"  placeholder="微信号/电话/QQ号">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            详情描述
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <textarea class="form-control" rows="10" placeholder="时间地点起因经过结果，回忆得越详细越好"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  class="col-sm-4 control-label">
+                                            损失总金额
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input  class="form-control"  placeholder="金额">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            上传证据
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <label class="btn btn-default" for="exampleInputFile" >
+                                                上传聊天、转账记录等
+                                            </label>
+
+                                            <input type="file" style="display: none"  id="exampleInputFile"/>
+
+                                        </div>
+                                    </div>
+                                    <!--&lt;!&ndash;奖励金&ndash;&gt;-->
+                                    <!--<div class="form-group">-->
+                                        <!--<label  class="col-sm-4 control-label">-->
+                                            <!--故事奖励金（营子）-->
+                                        <!--</label>-->
+                                        <!--<div class="col-sm-7">-->
+                                            <!--<select name="money" id="money" data-toggle="tooltip" data-placement="top"-->
+                                                    <!--title="用户看您的文章需要的营子"  class="btn btn-default dropdown-toggle">-->
+                                                <!--<option value="0">免费分享</option>-->
+                                                <!--<option value="2">2</option>-->
+                                                <!--<option value="4">4</option>-->
+                                                <!--<option value="6">6</option>-->
+                                                <!--<option value="8">8</option>-->
+                                                <!--<option value="10">10</option>-->
+
+                                            <!--</select>-->
+                                        <!--</div>-->
+
+                                    <!--</div>-->
+                                    <!--概述-->
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            故事概述
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <textarea class="form-control" rows="10" placeholder="决定读者是否会阅读全文的内容概述"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group text-right" style="padding-right: 65px">
+                                        <button type="submit" class="btn btn-default ">
+                                            确认并提交
+                                        </button>
+                                        <button type="reset" class="btn btn-default ">
+                                            清空
+                                        </button>
+
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+                        <!--曝光团伙-->
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <div>
+                                <form class="form-horizontal" method="post" action="http://uploadUrl" enctype="multipart/form-data">
+
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            团伙名称
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="password" class="form-control"  placeholder="不知道可不填">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            团伙人数
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="password" class="form-control" id="inputPassword" placeholder="骗子的人数">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            所用的联系方式
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="password" class="form-control"  placeholder="微信号/电话/QQ号">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            详情描述
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <textarea class="form-control" rows="10" placeholder="时间地点起因经过结果，回忆得越详细越好"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  class="col-sm-4 control-label">
+                                            损失总金额
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="password" class="form-control"  placeholder="金额">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            上传证据
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <label class="btn btn-default" for="uploadorg" >
+                                                上传聊天、转账记录等
+                                            </label>
+
+                                            <input type="file" style="display: none" id="uploadorg"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group text-right" style="padding-right: 65px">
+                                        <button type="submit" class="btn btn-default ">
+                                            确认并提交
+                                        </button>
+                                        <button type="reset" class="btn btn-default ">
+                                            清空
+                                        </button>
+
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                        <!--曝光公司-->
+                        <div role="tabpanel" class="tab-pane" id="messages">
+                            <div>
+                                <form class="form-horizontal" method="post" action="http://uploadUrl" enctype="multipart/form-data">
+
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            公司名称
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="password" class="form-control"  placeholder="公司详细名称">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            公司法人
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="password" class="form-control"  placeholder="公司法人（负责人）">
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            所用的联系方式
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="password" class="form-control"  placeholder="微信号/电话/QQ号">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            详情描述
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <textarea class="form-control" rows="10" placeholder="时间地点起因经过结果，回忆得越详细越好"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  class="col-sm-4 control-label">
+                                            损失总金额
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="password" class="form-control"  placeholder="金额">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-sm-4 control-label">
+                                            上传证据
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <label class="btn btn-default" for="uploadcompany" >
+                                                上传聊天、转账记录等
+                                            </label>
+
+                                            <input type="file" style="display: none" id="uploadcompany"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group text-right" style="padding-right: 65px">
+                                        <button type="submit" class="btn btn-default ">
+                                            确认并提交
+                                        </button>
+                                        <button type="reset" class="btn btn-default ">
+                                            清空
+                                        </button>
+
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <script src="../../lib/js/jquery.min.js"></script>
+                    <script src="../../lib/bootstrap/bootstrap.min.js"></script>
+                    <script src="../js/cheater-showcheater.js"></script>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--底部-->
+    @@include('include/cheater-footer.html')
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/bootstrap/bootstrap.min.js"></script>
+<script src="../js/cheater-showpersonal.js"></script>
+
+</body>
+</html>

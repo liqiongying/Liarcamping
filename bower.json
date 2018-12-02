@@ -1,0 +1,27 @@
+{
+  "name": "frontEndTemplate1",
+  "description": "a simple project template",
+  "main": "index.js",
+  "authors": [
+    "Lennon"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "bootstrap": "3",
+    "layer": "^3.1.1",
+    "echarts": "^4.0.4",
+    "jquery-treetable": "^3.2.0",
+    "mockjs": "^1.0.0",
+    "foundation": "^5.5.3",
+    "vue": "^2.5.17"
+  }
+}

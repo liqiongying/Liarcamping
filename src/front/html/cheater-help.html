@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>求助</title>
+    <script src="../../lib/vue/vue.min.js"></script>
+    <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/cheater-header.css">
+    <link rel="stylesheet" href="../css/cheater-footer.css">
+
+</head>
+<body>
+<div class="all-container" id="help">
+    <div class="main-content">
+        <!--导航-->
+        @@include('include/cheater-header.html')
+
+        <div class="row">
+            <div class="col-md-3">
+                <!--广告位-->
+                @@include('include/ads.html')
+            </div>
+            <div class="col-md-6">
+                <!--求助信息填写-->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">
+                            求助信息填写
+
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            <form class="form-horizontal" method="post" action="http://uploadUrl" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">骗子类型</label>
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static">个人</p>
+                                    </div>
+                                </div>
+                                <!--姓名-->
+                                <div class="form-group">
+                                    <label for="inputPassword" class="col-sm-4 control-label">
+                                        您的姓名
+                                    </label>
+                                    <div class="col-sm-7">
+                                        <input type="password" class="form-control" id="inputPassword" placeholder="姓名">
+                                    </div>
+                                </div>
+                                <!--联系电话-->
+                                <div class="form-group">
+                                    <label for="inputPassword" class="col-sm-4 control-label">
+                                        您的联系电话
+                                    </label>
+                                    <div class="col-sm-7">
+                                        <input type="password" class="form-control"  placeholder="手机号码或固定电话">
+                                    </div>
+                                </div>
+                                <!--联系地址-->
+                                <div class="form-group">
+                                    <label for="inputPassword" class="col-sm-4 control-label">
+                                        您的联系地址
+                                    </label>
+                                    <div class="col-sm-7">
+                                        <input type="password" class="form-control"  placeholder="地址具体到门牌号">
+                                    </div>
+                                </div>
+
+                                <!--身份证-->
+                                <div class="form-group">
+                                    <label  class="col-sm-4 control-label">
+                                        上传证据
+                                    </label>
+                                    <div class="col-sm-7">
+                                        <label class="btn btn-default" for="cardupload" >
+                                            上传身份证(正反面)
+                                        </label>
+
+                                        <input type="file" style="display: none" id="cardupload"/>
+
+                                    </div>
+                                </div>
+                                        <!--案情描述-->
+                                <div class="form-group">
+                                    <label for="inputPassword" class="col-sm-4 control-label">
+                                        案情描述
+                                    </label>
+                                    <div class="col-sm-7">
+                                        <textarea class="form-control" rows="10" placeholder="时间地点起因经过结果，回忆得越详细越好"></textarea>
+                                    </div>
+                                </div>
+                                        <!--损失总金额-->
+                                <div class="form-group">
+                                    <label  class="col-sm-4 control-label">
+                                        损失总金额
+                                    </label>
+                                    <div class="col-sm-7">
+                                        <input  class="form-control"  placeholder="金额"
+                                               v-model="lostmoney">
+                                    </div>
+                                </div>
+                                <!--证据-->
+                                <div class="form-group">
+                                    <label for="inputPassword" class="col-sm-4 control-label">
+                                        上传证据
+                                    </label>
+                                    <div class="col-sm-7">
+                                        <label class="btn btn-default" for="upload" >
+                                            上传聊天、转账记录等
+                                        </label>
+
+                                        <input type="file" style="display: none" id="upload"/>
+
+                                    </div>
+                                </div>
+
+                                <!--奖励金-->
+                                <div class="form-group">
+                                    <label  class="col-sm-4 control-label">
+                                        悬赏金额
+                                    </label>
+                                    <div class="col-sm-7">
+                                        <a href="#" class="btn btn-primary disabled">{{ lostmoney *0.1}}</a></div>
+
+                                </div>
+                                <!--概述-->
+                                <div class="form-group">
+                                    <label for="inputPassword" class="col-sm-4 control-label">
+                                        故事概述
+                                    </label>
+                                    <div class="col-sm-7">
+                                        <textarea class="form-control" rows="10" placeholder="决定读者是否会阅读全文的内容概述"></textarea>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="panel-footer text-right">
+                        <button type="submit" class="btn btn-default ">
+                            确认并提交
+                        </button>
+                        <button type="reset" class="btn btn-default ">
+                            清空
+                        </button>
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!--底部-->
+    @@include('include/cheater-footer.html')
+</div>
+
+<script type="text/javascript">
+    new Vue({
+        el: '#help',
+        data: {
+            lostmoney: ''
+        }
+    })
+</script>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/bootstrap/bootstrap.min.js"></script>
+
+</body>
+</html>

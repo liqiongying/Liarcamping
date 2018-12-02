@@ -1,0 +1,53 @@
+#all{
+	display: inline-block;
+	width: calc(100% - 300px);
+	height: calc(100% - 51px);
+	margin-top: 51px;
+    margin-left: 300px;
+}
+.list{
+	margin-top: 10px;
+	/*height: 300px;*/
+    width: 800px;
+	
+    
+}
+
+.action{
+	display: inline-block;
+    width: 800px;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+th{
+	text-align: center;
+	vertical-align: middle;
+}
+.table>tbody>tr>td{
+	vertical-align: middle;
+	text-align: center;
+}
+img{
+    width: 80px;
+    height: 60px;
+}
+.listborder{
+	display: inline-block;
+	/*height: 430px;*/
+	margin-bottom: 0px;
+}
+.listtitle{
+	text-align: center;
+}
+
+.panel-body{
+	padding: 10px 0px 0px 0px;
+}
+.delete{
+	float: right;
+}
+.appear{
+	margin-top: 200px;
+	margin-left: 100px;
+}

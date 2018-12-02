@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>车辆对比</title>
+    <link rel="stylesheet" href="../../lib/treetable/jquery.treetable.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/compare.css">
+    <link rel="stylesheet" href="../css/weight-table.css">
+</head>
+<body>
+    <div class="all-container">
+        @@include('include/header-nav.html')
+        <div class="main-container">
+            @@include('include/left-nav.html')
+            <div class="main-content">
+
+                <p>
+                    <h3>车辆信息对比</h3>
+                </p>
+                <hr>
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#primary-comp" data-toggle="tab">基本信息对比</a></li>
+                    <li ><a href="#weight-comp" data-toggle="tab">重量信息对比</a></li>
+                    <li ><a href="#data-comp" data-toggle="tab">数据分析对比</a></li>
+                </ul>
+
+                <div class="tab-content">
+
+                    <div class="panel panel-default fade in tab-pane active" id="primary-comp">
+                        <div class="panel-body">
+                            <table class="table table-hover ">
+                                <tr>
+                                    <th></th>
+                                    <td><img class="car-image-s" src="../img/20.png"/></td>
+                                    <td><img class="car-image-s" src="../img/26.png"/></td>
+                                    <td><img class="car-image-s" src="../img/22.png"></td>
+                                    <td><img class="car-image-s" src="../img/27.png"></td>
+                                </tr>
+                                <tr>
+                                    <th>基本信息</th>
+                                    <th>数据</th>
+                                </tr>
+                                <tr>
+                                    <th>品牌</th>
+                                    <td>奥迪</td>
+                                    <td>法拉利</td>
+                                    <td>雪佛龙</td>
+                                    <td>保时捷</td>
+                                </tr>
+                                <tr>
+                                    <th>车系</th>
+                                    <td>你个哈哈</td>
+                                    <td>阿大使馆</td>
+                                    <td>大风歌</td>
+                                    <td>阿法狗</td>
+                                </tr>
+                                <tr>
+                                    <th>型号</th>
+                                    <td>阿嘎尔</td>
+                                    <td>爱人噶</td>
+                                    <td>爱人噶</td>
+                                    <td>各方的</td>
+                                </tr>
+                                <tr>
+                                    <th>报价</th>
+                                    <td>24445</td>
+                                    <td>56367</td>
+                                    <td>84647</td>
+                                    <td>5463457</td>
+                                </tr>
+                                <tr>
+                                    <th>ming</th>
+                                    <td>24445</td>
+                                    <td>56367</td>
+                                    <td>84647</td>
+                                    <td>5463457</td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default fade tab-pane" id="weight-comp">
+                        <div class="panel-heading">
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#newNodeModal">
+                               新建节点
+                            </button>
+                        </div>
+                        <div class="panel-body">
+                            <table id="weight-table" class="treetable table table-hover">
+
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <td><img class="car-image-s" src="../img/20.png"/></td>
+                                    <td><img class="car-image-s" src="../img/26.png"/></td>
+                                    <td><img class="car-image-s" src="../img/22.png"></td>
+                                    <td><img class="car-image-s" src="../img/27.png"></td>
+                                    <td>操作</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr data-tt-id="1" class="branch  expanded">
+                                    <td>
+                                        <span class="indenter" style="padding-left: 0px;">
+                                            <a href="#" title="Collapse"></a>
+                                        </span>
+                                        <span class="file">总重量</span>
+                                    </td>
+                                    <td>341756</td>
+                                    <td>145134</td>
+                                    <td>1345</td>
+                                    <td>480.95</td>
+                                    <td>
+                                        <input type="button" class="btn btn-default" data-toggle="modal" data-target="#editNodeModal" name="edit" value="编辑">
+                                        <input type="button" class="btn btn-default" name="delete" value="删除">
+                                    </td>
+                                </tr>
+                                <tr data-tt-id="2" class="branch  expanded">
+                                    <td>
+                                        <span class="indenter" style="padding-left: 0px;">
+                                            <a href="#" title="Collapse"></a>
+                                        </span>
+                                        <span class="folder">左前门</span>
+                                    </td>
+                                    <td>14754</td>
+                                    <td>1451</td>
+                                    <td>34264</td>
+                                    <td>62546</td>
+                                    <td>
+                                        <input type="button" class="btn btn-default" data-toggle="modal" data-target="#editNodeModal"  name="edit" value="编辑">
+                                        <input type="button" class="btn btn-default" name="edit" value="删除">
+                                    </td>
+                                </tr>
+                                <tr data-tt-id="2-1" data-tt-parent-id="2" class="branch selected collapsed" style="">
+                                    <td>
+                                        <span class="indenter" style="padding-left: 10px;">
+                                            <a href="#" title="Expand"></a>
+                                        </span><span class="folder">左前门逻辑总重</span>
+                                    </td>
+                                    <td>Folder</td>
+                                    <td>--</td>
+                                    <td>--</td>
+                                    <td>--</td>
+                                    <td>
+                                        <input type="button" class="btn btn-default" data-toggle="modal" data-target="#editNodeModal"  name="edit" value="编辑">
+                                        <input type="button" class="btn btn-default" name="edit" value="删除">
+                                    </td>
+                                </tr>
+                                <tr data-tt-id="2-1-1" data-tt-parent-id="2-1" class="leaf collapsed" style="display: none;">
+                                    <td>
+                                        <span class="indenter" style="padding-left: 20px;"></span>
+                                        <span class="file">左前门把手</span>
+                                    </td>
+                                    <td>File</td>
+                                    <td>124.46 KB</td>
+                                    <td>124.46 KB</td>
+                                    <td>124.46 KB</td>
+                                    <td>
+                                        <input type="button" class="btn btn-default" data-toggle="modal" data-target="#editNodeModal"  name="edit" value="编辑">
+                                        <input type="button" class="btn btn-default" name="edit" value="删除">
+                                    </td>
+                                </tr>
+                                <tr data-tt-id="2-2-1" data-tt-parent-id="2-1" class="leaf collapsed" style="display: none;">
+                                    <td>
+                                        <span class="indenter" style="padding-left: 20px;">
+                                            <a href="#" title="Expand"></a>
+                                        </span>
+                                        <span class="file">左后门逻辑总重</span>
+                                    </td>
+                                    <td>File</td>
+                                    <td>1314.71 KB</td>
+                                    <td>1314.71 KB</td>
+                                    <td>1314.71 KB</td>
+                                    <td>
+                                        <input type="button" class="btn btn-default" data-toggle="modal" data-target="#editNodeModal"  name="edit" value="编辑">
+                                        <input type="button" class="btn btn-default" name="edit" value="删除">
+                                    </td>
+                                </tr>
+                                <tr data-tt-id="2-2" data-tt-parent-id="2" class="branch selected collapsed" style="">
+                                    <td>
+                                        <span class="indenter" style="padding-left: 10px;">
+                                            <a href="#" title="Expand"></a>
+                                        </span>
+                                        <span class="folder">右前门</span>
+                                    </td>
+                                    <td>Folder</td>
+                                    <td>--</td>
+                                    <td>--</td>
+                                    <td>--</td>
+                                    <td>
+                                        <input type="button" class="btn btn-default" data-toggle="modal" data-target="#editNodeModal"  name="edit" value="编辑">
+                                        <input type="button" class="btn btn-default" name="edit" value="删除">
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                                <caption>
+                                    <a href="#" onclick="jQuery('#weight-table').treetable('expandAll'); return false;">全部展开</a>
+                                    <a href="#" onclick="jQuery('#weight-table').treetable('collapseAll'); return false;">全部收起</a>
+                                </caption>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default fade tab-pane" id="data-comp">
+                        <div class="panel-body">
+                            <table class="table table-hover ">
+                                <tr>
+                                    <th></th>
+                                    <td><img class="car-image-s" src="../img/25.png"/></td>
+                                    <td><img class="car-image-s" src="../img/26.png"/></td>
+                                    <td><img class="car-image-s" src="../img/22.png"></td>
+                                    <td><img class="car-image-s" src="../img/27.png"></td>
+                                </tr>
+                                <tr>
+                                    <th>供应商</th>
+                                    <td><div id="0" class="pie-container"></div></td>
+                                    <td><div id="1" class="pie-container"></div></td>
+                                    <td><div id="2" class="pie-container"></div></td>
+                                    <td><div id="3" class="pie-container"></div></td>
+                                </tr>
+                                <tr>
+                                    <th>材料</th>
+                                    <td><div id="4" class="pie-container"></div></td>
+                                    <td><div id="5" class="pie-container"></div></td>
+                                    <td><div id="6" class="pie-container"></div></td>
+                                    <td><div id="7" class="pie-container"></div></td>
+                                </tr>
+                                <tr>
+                                    <th>重量</th>
+                                    <td><div id="8" class="pie-container"></div></td>
+                                    <td><div id="9" class="pie-container"></div></td>
+                                    <td><div id="10" class="pie-container"></div></td>
+                                    <td><div id="11" class="pie-container"></div></td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!--新建节点的模态框-->
+                <div class="modal fade" id="newNodeModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="newNodeModalLabel">新建节点</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-container">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="node-name">节点名称</label>
+                                            <input type="text" class="form-control" id="node-name" name="nodename" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="p-node-name">父节点名称</label>
+                                            <select id="p-node-name" class="form-control">
+                                                <option value="1">zuoqianmen</option>
+                                                <option value="2">zuoqiagaergqaragsdfyhenmen</option>
+                                                <option value="3">zuoqiagafdgaenmen</option>
+                                                <option value="4">zuoqiajksddynmen</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="car-w1">车辆1</label>
+                                            <input type="text" class="form-control" id="car-w1" name="carw" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="car-w2">车辆2</label>
+                                            <input type="text" class="form-control" id="car-w2" name="carw" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="car-w3">车辆3</label>
+                                            <input type="text" class="form-control" id="car-w3" name="carw" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="car-w4">车辆4</label>
+                                            <input type="text" class="form-control" id="car-w4" name="carw" value="">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-default">保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--编辑节点的模态框-->
+                <div class="modal fade" id="editNodeModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="editNodeModalLabel">新建节点</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-container">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="ednode-name">节点名称</label>
+                                            <input type="text" class="form-control" id="ednode-name" name="ednodename" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edp-node-name">父节点名称</label>
+                                            <select id="edp-node-name" class="form-control">
+                                                <option value="1">zuoqianmen</option>
+                                                <option value="2">zuoqiagaergqaragsdfyhenmen</option>
+                                                <option value="3">zuoqiagafdgaenmen</option>
+                                                <option value="4">zuoqiajksddynmen</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edcar-w1">车辆1</label>
+                                            <input type="text" class="form-control" id="edcar-w1" name="carw" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edcar-w2">车辆2</label>
+                                            <input type="text" class="form-control" id="edcar-w2" name="carw" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edcar-w3">车辆3</label>
+                                            <input type="text" class="form-control" id="edcar-w3" name="carw" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edcar-w4">车辆4</label>
+                                            <input type="text" class="form-control" id="edcar-w4" name="carw" value="">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-default">保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="../../config/config.js"></script>
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../lib/treetable/jquery.treetable.js"></script>
+    <script src="../../lib/js/echarts.js"></script>
+    <script src="../../lib/js/mock.js"></script>
+    <script src="../../lib/bootstrap/bootstrap.min.js"></script>
+    <script src="../../lib/layer/layer.js"></script>
+    <script src="../../util/util.js"></script>
+    <script src="../../util/mock.js"></script>
+    <script src="../js/compare.js"></script>
+    <script src="../js/compare-weight.js"></script>
+    <!--<script src="../js/compare2.js"></script>-->
+</body>
+</html>

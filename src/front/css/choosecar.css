@@ -1,0 +1,80 @@
+.whole{
+    margin:5px;
+}
+.abc{
+    margin-bottom: 10px;
+    margin-top: 5px;
+    display: block;
+    text-align: center;
+}
+#search{
+    margin-bottom: 20px;
+}
+#fen{
+    text-align: center;
+}
+.rightpanel{
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.leftpanel{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+
+}
+.tworow{
+    /*display: inline-block;*/
+    padding-right: 10px;
+    padding: 10px 0px 10px 0px;
+    /*margin: 10px 0px 20px 0px;*/
+    margin-right: -8px;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+.twobtn{
+    text-align: center;
+}
+.compcar{
+    border: #1E9FFF 1px;
+    width: auto;
+    height: 420px;
+    text-align: center;
+}
+.card{
+    border: #cccccc 1px solid;
+    display: inline-block;
+    padding: 5px;
+    margin: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.card:hover{
+    box-shadow: #cccccc 3px 3px 15px;
+
+}
+.r{
+    display: inline;
+    margin-top: 10px;
+    margin-left: 8px;
+    padding: 0px;
+}
+tbody{
+    margin-top: 20px;
+
+}
+img{
+    width: 140px;
+    height: 90px;
+
+}
+.choose{
+    border:1px #1E9FFF;
+    margin: 10px 10px;
+}
+.allcard{
+    display: inline-block;
+    text-align: left;
+    width: 700px;
+    height: 280px;
+}

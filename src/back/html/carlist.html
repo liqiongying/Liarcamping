@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>车辆列表</title>
+		<link rel="stylesheet" href="../../lib/treetable/jquery.treetable.css">
+		<link rel="stylesheet" href="../../lib/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/all.css">
+		<!--<link rel="stylesheet" href="../css/index.css">-->
+		<link rel="stylesheet" href="../css/carlist.css" />
+	</head>
+
+	<body>
+		<div class="all-container">
+			@@include('include/header-nav.html')
+			<div class="main-container">
+			@@include('include/left-nav.html')
+			<div id="all"class="main-content" >
+
+			<div class="action">
+				<button class="btn btn-default" type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+					<span class="glyphicon glyphicon-plus" >
+					添加汽车
+				</span>
+				
+				</button>
+
+				<button class="btn btn-default delete" type="button">
+					<span class="glyphicon glyphicon-trash" >
+					批量删除
+				</span>
+								
+
+				</button>
+			</div>
+			<div class="panel listborder">
+				<div class="panel-heading listtitle">
+					汽车信息列表
+				</div>
+				<div class="panel-body">
+
+					<div class="list">
+						<table class="table table-hover carinfo">
+							<tr>
+								<th>图片</th>
+								<th>品牌</th>
+								<th>车型</th>
+								<th>变速器</th>
+								<th>驱动方式</th>
+								<th>年份</th>
+								<th>操作</th>
+
+							</tr>
+							<tr class="hov">
+								<td><img src="../img/untitled.png" /></td>
+								<td class="tdd">兰德酷路泽</td>
+								<td class="tdd">中大型SUV </td>
+								<td class="tdd">自动</td>
+								<td class="tdd">前置四驱</td>
+								<td class="tdd">2015款</td>
+								<td class="tdd">
+									<input class="btn btn-default " type="button" value="查看结构信息" data-toggle="modal" data-target="#structure">
+
+									<input class="btn btn-default" type="button" value="编辑">
+									<input class="btn btn-default dele" type="button" data-dismiss="alert" value="删除">
+								</td>
+							</tr>
+							<tr class="hov">
+								<td><img src="../img/untitled1.png" /></td>
+								<td class="tdd">奥迪A7</td>
+								<td class="tdd">中大型车 </td>
+								<td class="tdd">自动</td>
+								<td class="tdd">前置前驱</td>
+								<td class="tdd">2017款</td>
+								<td class="tdd">
+									<input class="btn btn-default " type="button" value="查看结构信息" data-toggle="modal" data-target="#structure">
+									
+									<input class="btn btn-default" type="button" value="编辑">
+									<input class="btn btn-default dele" type="button" data-dismiss="alert" value="删除">
+								</td>
+							</tr>
+							<tr class="hov">
+								<td><img src="../img/untitld.png" /></td>
+								<td class="tdd">Polo 1.6</td>
+								<td class="tdd">中大型车 </td>
+								<td class="tdd">自动</td>
+								<td class="tdd"> - </td>
+								<td class="tdd">2009款</td>
+								<td class="tdd">
+									<input class="btn btn-default " type="button" value="查看结构信息" data-toggle="modal" data-target="#structure">
+									
+									<input class="btn btn-default" type="button" value="编辑">
+									<input class="btn btn-default dele" type="button" data-dismiss="alert" value="删除">
+								</td>
+							</tr>
+							<tr class="hov">
+								<td><img src="../img/utitled.png" /></td>
+								<td class="tdd">奥迪Q7</td>
+								<td class="tdd">中大型SUV</td>
+								<td class="tdd">自动</td>
+								<td class="tdd">前置四驱</td>
+								<td class="tdd">2016款</td>
+								<td class="tdd">
+									<input class="btn btn-default " type="button" value="查看结构信息" data-toggle="modal" data-target="#structure">
+
+									<input class="btn btn-default" type="button" value="编辑">
+									<input class="btn btn-default dele" data-dismiss="alert" type="button" value="删除">
+								</td>
+							</tr>
+<!--动态添加一行信息-->					<tr class="hov">
+								<td><img src="../img/utitled.png" /></td>
+								<td class="tdd">奥迪Q7</td>
+								<td class="tdd">中大型SUV</td>
+								<td class="tdd">自动</td>
+								<td class="tdd">前置四驱</td>
+								<td class="tdd">2016款</td>
+								<td class="tdd">
+									<input class="btn btn-default " type="button" value="查看结构信息" data-toggle="modal" data-target="#structure">
+
+									<input class="btn btn-default" type="button" value="编辑">
+									<input class="btn btn-default dele" data-dismiss="alert" type="button" value="删除">
+								</td>
+							</tr>
+
+							<tr></tr>
+
+						</table>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+			</div>
+		</div>
+
+<!--添加汽车模态框-->
+
+		<div class="modal fade" id="exampleModal" >
+			<div class="modal-dialog modal-sm" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+		<!--button去哪了-->	<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+						<h4 class="modal-title" id="exampleModalLabel">汽车信息录入</h4>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="recipient-name" class="control-label">
+            	品牌
+            </label>
+								<input type="text" class="form-control" id="recipient-name">
+							</div>
+							<div class="form-group">
+								<label for="recipient-name" class="control-label">
+            	车型
+            </label>
+								<input type="text" class="form-control" id="recipient-name">
+							</div>
+							<div class="form-group">
+								<label for="recipient-name" class="control-label">
+            	变速器
+            </label>
+								<input type="text" class="form-control" id="recipient-name">
+							</div>
+							<div class="form-group">
+								<label for="recipient-name" class="control-label">
+            	驱动方式
+            </label>
+								<input type="text" class="form-control" id="recipient-name">
+							</div>
+							<div class="form-group">
+								<label for="recipient-name" class="control-label">
+            	年份
+            </label>
+								<input type="text" class="form-control" id="recipient-name">
+							</div>
+							<div class="form-group">
+								<a><label for="recipient-name" class="control-label">
+            	请选择图片
+            </label>
+								</a>
+							</div>
+							<div>
+							<input type="submit" class="btn btn-primary" value="提交"></input>
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+							</div>
+						</form>
+					</div>
+					<!--<div class="modal-footer">-->
+						<!--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+						<!--<input type="submit" class="btn btn-primary" value="提交"></input>-->
+					<!--</div>-->
+				</div>
+			</div>
+		</div>
+
+<!--结构模态框-->
+		<!-- Modal -->
+		<div class="modal fade" id="structure" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content ">
+					<div class="modal-header">
+      <!--没懂-->		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">汽车结构信息</h4>
+					</div>
+	<!--第一次弹出-->
+					<div class="modal-body show1">
+						<div class="action carstru">
+							<button class="btn btn-default" type="button" id="structbutton">
+					    <span class="glyphicon glyphicon-plus" >新建节点</span>
+							</button>
+
+							<button class="btn btn-default delete" type="button">
+					    <span class="glyphicon glyphicon-trash" >批量删除</span>
+							</button>
+						</div>
+
+						<div class="list carstructure">
+							<table id="struct-table" class="table table-hover carinfo treetable">
+								<thead>
+									<tr>
+										<th>节点</th>
+										<th>重量</th>
+										<th>材料</th>
+										<th>供应商</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr data-tt-id="a" class="hov branch  expanded">
+
+										<td>
+											<span class="indenter" style="padding-left: 0px;">
+                                            <a href="#" title="Collapse"></a>
+                                        </span>
+											<span>左前门</span>
+										</td>
+										<td class="tdd">兰德酷路泽</td>
+										<td class="tdd">中大型SUV </td>
+
+										<td class="tdd">2015款</td>
+										<td class="tdd">
+											<input class="btn btn-default" type="button" value="编辑">
+											<input class="btn btn-default dele" type="button" data-dismiss="alert" value="删除">
+										</td>
+									</tr>
+									<tr data-tt-id="b" class="hov branch  expanded">
+										<td>
+											 <span class="indenter" style="padding-left: 0px;">
+                                            <a href="#" title="Collapse"></a>
+                                        </span>
+											<span >左前门逻辑总成</span>
+										</td>
+										<td class="tdd">奥迪A7</td>
+										<td class="tdd">中大型车 </td>
+										<td class="tdd">2017款</td>
+										<td class="tdd">
+											<input class="btn btn-default" type="button" value="编辑">
+											<input class="btn btn-default dele" type="button" data-dismiss="alert" value="删除">
+										</td>
+									</tr>
+									<tr data-tt-id="b-a" data-tt-parent-id="b" class="hov branch selected collapsed">
+										<td>
+											<span ></span>
+										</td>
+										<td class="tdd">Polo 1.6</td>
+										<td class="tdd">中大型车 </td>
+										<td class="tdd">2009款</td>
+										<td class="tdd">
+											<input class="btn btn-default" type="button" value="编辑">
+											<input class="btn btn-default dele" type="button" data-dismiss="alert" value="删除">
+										</td>
+									</tr>
+									<tr data-tt-id="b-a-a" data-tt-parent-id="b-a" class="leaf collapsed hov">
+										<td>
+											<span class="indenter" style="padding-left: 20px;"></span>
+											<span >nage ahdkf</span>
+										</td>
+										<td class="tdd">奥迪Q7</td>
+										<td class="tdd">中大型SUV</td>
+										<td class="tdd">2016款</td>
+										<td class="tdd">
+											<input class="btn btn-default" type="button" value="编辑">
+											<input class="btn btn-default dele" data-dismiss="alert" type="button" value="删除">
+										</td>
+									</tr>
+									<tr data-tt-id="c" class="leaf collapsed" style="display: none;">
+										<td>
+                                        <span class="indenter" style="padding-left: 20px;">
+                                            <a href="#" title="Expand"></a>
+                                        </span>
+											<span class="file">左后门逻辑总重</span>
+										</td>
+										<td class="tdd">File</td>
+										<td class="tdd">1314.71 KB</td>
+										<td class="tdd">1314.71 KB</td>
+										<td class="tdd">
+											<input class="btn btn-default" type="button" value="编辑">
+											<input class="btn btn-default dele" data-dismiss="alert" type="button" value="删除">
+										</td>
+									</tr>
+								</tbody>
+
+							</table>
+						</div>
+
+					</div>
+					<div class="modal-footer show1">
+						<button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+						<button type="button" class="btn btn-primary">保存</button>
+					</div>
+
+    <!--第二次弹出：新建节点-->
+					<form class="node" id="nodeform">
+						<div class="form-group">
+							<label for="recipient-name" class="control-label">节点名称</label>
+							<input type="text" class="form-control" id="recipient-name">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="control-label">父节点名称</label>
+							<select class="form-control">
+								<option>左前门</option>
+								<option>右前门</option>
+
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="control-label">重量</label>
+							<input type="text" class="form-control" id="recipient-name">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="control-label">材料</label>
+							<input type="text" class="form-control" id="recipient-name">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="control-label">供应商</label>
+							<input type="text" class="form-control" id="recipient-name">
+						</div>
+						<div class="form-group backbtn1">
+						<button type="button" class="btn btn-default" id="back">返回</button>
+						<button type="button" class="btn btn-primary">保存</button>
+
+						</div>
+
+					</form>
+
+				</div>
+			</div>
+		</div>
+
+		<script src="../../config/config.js"></script>
+		<script src="../../lib/js/jquery.min.js"></script>
+		<script src="../../lib/treetable/jquery.treetable.js"></script>
+		<script src="../../lib/js/echarts.js"></script>
+		<script src="../../lib/js/mock.js"></script>
+		<script src="../../lib/bootstrap/bootstrap.min.js"></script>
+		<script src="../../lib/layer/layer.js"></script>
+		<script src="../../util/util.js"></script>
+		<script src="../../util/mock.js"></script>
+		<script src="../js/index.js"></script>
+		<script src="../js/carlist.js"></script>
+	</body>
+
+</html>
