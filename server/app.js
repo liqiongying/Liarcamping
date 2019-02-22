@@ -6,7 +6,16 @@ const cors = require('koa2-cors');
 const render = require('koa-art-template');
 const path=require('path');
 const Models=require('./models/index');
+const session = require('koa-session');
 const app =new Koa();
+app.keys = ['l am a girl.l want to fly'];
+app.use(session({
+    key: 'a boy likes eating',
+    maxAge: 86400000,
+    overwrite: true, /** (boolean) can overwrite or not (default true) */
+    httpOnly: true, /** (boolean) httpOnly or not (default true) */
+    signed: true, /** (boolean) signed or not (default true) */
+}, app));
 app.use(cors({
     origin: [ "http://localhost:8080"],
     exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
@@ -15,20 +24,18 @@ app.use(cors({
     allowMethods: ['GET', 'POST', 'DELETE'],
     allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
 }));
-// app.use(async (ctx,next)=>{
-//     ctx.set('Access-Control-Allow-Origin','*');
-//     ctx.set("Access-Control-Allow-Methods", "OPTIONS, GET, PUT, POST, DELETE");
-//     ctx.set("Access-Control-Allow-Headers", "x-requested-with, accept, origin, content-type");
-//     ctx.set("Content-Type", "application/json;charset=utf-8");
-//     await next();
-// });
 app.use(bodyParser());
+// router.post('/login',async (ctx)=>{
+//     ctx.body="首页";
+//     console.log(ctx.request.body);
+//
+// });
+// app.use(router.routes());
 // app.use(async (ctx,next)=>{
 //     await next();
 //     ctx.response.type='text/html';
 //     ctx.response.body='<h1>你好,李金凤!</h1>'
 // });
-
 // app.use(serve(__dirname + '/../dist'));
 // render(app, {
 //     root: path.join(__dirname, '/../dist'),

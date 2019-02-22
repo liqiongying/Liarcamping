@@ -14,10 +14,12 @@ module.exports = {
     */
       return queryInterface.bulkInsert('Users', [{
           username: 'John Doe',
-          password: md5('1234')
+          password: md5('1234'),
+          email:'156543652@qq.com'
       },{
           username: 'Siqin-love16620444412',
-          password: md5('1234')
+          password: md5('1234'),
+          email:'1586765352@qq.com'
       }], {});
   },
 

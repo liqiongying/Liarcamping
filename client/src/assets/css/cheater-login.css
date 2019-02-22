@@ -1,14 +1,20 @@
 #login-container{
-    max-height: 200px;
+    /*max-height: 200px;*/
+
 }
-body{
-    background-image: url("../img/sunny.jpg");
-    background-size: 1380px 750px;
-}
+/*body{*/
+    /*background-image: url("../img/greybg.jpg");*/
+    /*background-size:1500px 800px;*/
+
+/*}*/
+/*.all-container{*/
+    /*background-image: url("../img/greybg.jpg");*/
+    /*background-size: auto;*/
+/*}*/
 
 
 #login-top{
-    background-image: url("../img/sunny.jpg");
+    background-image: url("../img/greybg.jpg");
     background-size: 1390px 700px;
     opacity: 1;
     width: 100%;

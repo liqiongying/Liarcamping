@@ -26,8 +26,7 @@
             <button type="button" class="btn btn-default " @click="love(content_id,uid)">
                 点赞({{content.like_count}})
             </button>
-            <button type="button" class="btn btn-default" style="float: right"
-                    @click="comment(content_id,content)">
+            <button type="button" class="btn btn-default" style="float: right">
             评论({{content.comment_count}})
             </button>
         </div>
@@ -50,9 +49,6 @@
                 return moment(this.content.createdAt).format('YYYY-MM-DD HH:mm:ss')
             }
         },
-        data(){
-            return ifcomment=false;
-        },
         methods:{
             love(content_id,uid){
                 const result=Util.love(content_id,uid);
@@ -66,33 +62,9 @@
                         alert(data.data);
                     }
                 });
-            },
-            comment(content_id){
-                const result=Util.comment(content_id);
-                result.then(({data})=>{
-                    if(data.code==1){
-                        if(this.ifcomment==true)
-                        this.$router.push('/comment');
-                        // this.setCheater(data.data);
-                        // hub.$emit('content',data.data);
-                        // console.log(data.data);
-                    }else {
-                        alert(data.data);
-                    }
-            })
-        },
-            watch: {
-                $route(to, from) {//监听路径改变
-                    // console.log(to.path);
-                    if(to.path=='/comment'){
-                        this.ifcomment=true;
-                    }
-                    //     this.$store.dispatch('hideHeader');
-                    // }
-                }
-            }
 
-    }
+            }
+        }
     }
 </script>
 

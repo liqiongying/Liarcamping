@@ -1,3 +1,9 @@
+# Liarcamping
+a website to hit the liars
+<<<<<<< HEAD
+# Liarcamping
+a website to hit the liars
+=======
 # 前端项目通用模板
 
 ### 使用技术及工具
@@ -16,4 +22,6 @@
 5. bower依赖模块下载完成后，在项目.根目录下执行命令npm start，启动项目
 
 注：启动中如遇报错，可能因为node或bower依赖的包缺少、或者包与当前环境不兼容。建议根据错误信息删除node_modules或bower_components文件夹，重新按照上面的使用说明执行一次。
+
+>>>>>>> "12月2日，完成首页显示数据库中的数据，以及首页的分页功能。
 

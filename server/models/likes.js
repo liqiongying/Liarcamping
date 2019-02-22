@@ -42,10 +42,14 @@ module.exports = (sequelize, Sequelize) => {
           foreignKey:'user_id'
           // as:'contents'
       });
-      Likes.belongsTo(models.Comments,{
+      Likes.belongsTo(models.Contents,{
           foreignKey:'content_id'
           // as:'contents'
       });
+      // Likes.belongsTo(models.Comments,{
+      //     foreignKey:'content_id'
+      //     // as:'contents'
+      // });
   };
   return Likes;
 };
