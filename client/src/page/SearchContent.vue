@@ -1,0 +1,52 @@
+<template>
+    <div>
+    <SearchToolBar :search="search"/>
+
+    <div class="row">
+            <div class="col-md-3">
+                <!--广告位-->
+                @@include('include/ads.html')
+            </div>
+            <div class="col-md-6">
+                <cheater_detail :content="content"></cheater_detail>
+
+            </div>
+            <div class="col-md-3">
+                <!--广告位-->
+                @@include('include/ads.html')
+            </div>
+
+    </div>
+    </div>
+</template>
+
+<script>
+    import cheater_detail from './../components/cheater-detail/cheater-detail'
+    import SearchToolBar from './../components/SearchToolBar'
+
+    export default {
+        name: "SearchContent",
+        components:{
+            cheater_detail,
+            SearchToolBar
+        },
+        created() {
+            if (!this.content.id) {
+                this.$router.push('/index');
+                return;
+            }
+            // console.log(this.cheatercomment);
+
+        },
+
+        computed:{
+            content(){
+                return this.$route.query.content;
+            }
+        }
+    }
+</script>
+
+<style scoped>
+
+</style>
