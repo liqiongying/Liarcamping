@@ -42,6 +42,10 @@
         computed:{
             content(){
                 return this.$route.query.content;
+            },
+            search(){
+                return this.$route.query.searchText;
+
             }
         }
     }

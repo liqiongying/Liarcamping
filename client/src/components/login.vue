@@ -2,12 +2,12 @@
     <div id="login-container">
 
         <div id="login-top" class="navbar navbar-default login-top">
-            <a class="system">骗子集中营</a>
+            <a class="system"><router-link to="/">骗子集中营</router-link></a>
             <a class="welcome"> 欢迎您！</a>
 
         </div>
-
-        <div id="login-box" style="margin-top: 150px;height: auto">
+        <div class="white"></div>
+        <div id="login-box" style="height: auto">
 
             <!-- 将form表单提交的窗口指向隐藏的ifrmae,并通过ifrmae提交数据。 -->
             <form method="POST" name="formphp" target="formsubmit" @submit.prevent="validateForm('form-login')"
@@ -67,7 +67,7 @@
         mounted(){
             /*页面挂载获取cookie，如果存在username的cookie，则跳转到主页，不需登录*/
             if(this.$cookie.getCookie('username')){
-                this.$router.push('/')
+                this.$router.go(-1);
             }
         },
         methods:{
@@ -91,7 +91,7 @@
                                     // console.log(data.data.dt.id);
                                     // console.log(this.$cookie.getCookie('uid'));
 
-                                    this.$router.push('/');
+                                    this.$router.go(-1);
                                 }
                             });
 
@@ -107,7 +107,134 @@
 </script>
 
 <style scoped>
-    @import "../assets/css/cheater-login.css";
+
+    #login-container{
+        /*max-height: 200px;*/
+        background-image: url("../assets/img/bg.jpg");
+        height: fit-content;
+    }
+    /*body{*/
+    /*background-image: url("../img/greybg.jpg");*/
+    /*backgroun-size:1500px 800px;*/
+
+    /*}*/
+    /*.all-container{*/
+    /*background-image: url("../img/greybg.jpg");*/
+    /*background-size: auto;*/
+    /*}*/
+
+
+    #login-top{
+        background-image: url("../assets/img/bg.jpg");
+        background-size: 1390px 700px;
+
+        opacity: 1;
+        width: 100%;
+        height: 50px;
+        position: fixed;
+        top: 0;
+    }
+
+    #login-top a{
+        font-weight: bold;
+        /*color: #ffffff;*/
+    }
+
+    #login-box{
+        background-image: url("../assets/img/sunny.jpg");
+        background-size: 2500px 1000px;
+        opacity: 1;
+        font-size: 15px;
+        width: 300px;
+        height: 335px;
+        margin: 55px auto 50px auto;
+        border-radius: 3px;
+        border: 1px solid #dafafa;
+        padding: 10px 15px;
+        background-color: #ffffff;
+    }
+    #login-box:hover{
+        box-shadow: #cccccc 5px 10px 20px;
+        cursor: pointer;
+    }
+
+    #login-btn{
+        width: 89px;
+        height: 25px;
+        text-align: left;
+        margin-top: 5px;
+        margin-left: 0;
+        position: relative;
+        left: 135px;
+        bottom: 38px;
+        margin-bottom: 10px;
+        margin-bottom: 0;
+    }
+
+    #another-btn{
+        width: 244px;
+        height: 40px;
+        text-align:center;
+        margin-top: 4px;
+        margin-left: 22px;
+        position: relative;
+        right: 11px;
+        margin-bottom: 4px;
+    }
+
+    .toLogin a{
+        margin-left: 10px;
+        text-decoration: none;
+        font-size: 12px;
+        color: #666666;
+    }
+    .form-group{
+        margin: 1px 10px;
+    }
+    .title{
+        font-size:15px ;
+    }
+
+
+    .system{
+        font-size: 30px;
+        margin:3px 18px;
+        float: left;
+        color:#000000
+    }
+
+    .welcome{
+        float: right;
+        margin-top: 14px;
+        font-size: 16px;
+    }
+
+.white{
+    height: 150px;
+}
+    .forgetPsd{
+        margin-left:22px;
+        color: #0f0f0f;
+    }
+
+    .register{
+        margin-left: 65px;
+        color: #0f0f0f;
+    }
+    .form-group-button{
+        width: 5px;
+    }
+    .small{
+        font-size: 13px;
+        position: relative;
+        left: 5px;
+        margin-top: 0;
+        padding-top: 20px;
+    }
+    #remember{
+        margin-top: 15px;
+        display: none;
+    }
     .another-btn{
         width: 244px;
         height: 40px;
@@ -118,4 +245,7 @@
         right: 11px;
         margin-bottom: 4px;
     }
+    /*#login-container{*/
+        /*background: #00b3ee;*/
+    /*}*/
 </style>

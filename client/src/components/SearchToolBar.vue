@@ -19,13 +19,15 @@
                     </form>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
+
         </nav>
 
-    </div>
+        </div>
 </template>
 
 <script>
     import Util from './../api/Util'
+
     export default {
         name: "SearchToorBar",
         props:['search'],

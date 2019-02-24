@@ -24,26 +24,7 @@
        <div class="row">
            <div class="col-md-3" style="position: relative">
                <!--防骗术-->
-               <div class="panel panel-default showmethod">
-
-                   <div class="panel-heading">你应该知道的防骗术</div>
-                   <!--<div class="panel-body">
-
-                   </div>-->
-                   <div class="list-group">
-                       <a href="cheater-content.html" class="list-group-item">
-                           Cras justo odio
-                       </a>
-                       <a href="cheater-content.html" class="list-group-item">Dapibus ac facilisis in</a>
-                       <a href="cheater-content.html" class="list-group-item">Dapibus ac facilisis in</a>
-                       <a href="cheater-content.html" class="list-group-item">Dapibus ac facilisis in</a>
-
-                       <a href="cheater-content.html" class="list-group-item">Dapibus ac facilisis in</a>
-                       <a href="cheater-content.html" class="list-group-item">Morbi leo risus</a>
-                       <a href="cheater-content.html" class="list-group-item">Porta ac consectetur ac</a>
-                       <a href="cheater-content.html" class="list-group-item">Vestibulum at eros</a>
-                   </div>
-               </div>
+            <methods></methods>
                <!--广告位-->
                @@include('include/ads.html')
            </div>
@@ -154,13 +135,14 @@
 
 <script>
     import axios from 'axios'
+    import methods from './methods'
 
     import Loading from '../base/loading'
     import {mapMutations} from 'vuex'
     export default {
         name: "index",
         components:{
-            Loading
+            Loading,methods
         },
         data(){
             return{

@@ -24,13 +24,13 @@ const Util={
           }
       })
     },
-    comment(content_id){
+    comment(content_id,uid){
         return axios({
             method: 'post',
             url: 'http://127.0.0.1:3000/comment',
             data: {
                 content_id:content_id,
-                uid:this.$cookie.getCookie('uid')
+                uid:uid
             }})
     }
 };
