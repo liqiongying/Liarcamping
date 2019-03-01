@@ -111,7 +111,7 @@
     #login-container{
         /*max-height: 200px;*/
         background-image: url("../assets/img/bg.jpg");
-        height: fit-content;
+        height:fit-content;
     }
     /*body{*/
     /*background-image: url("../img/greybg.jpg");*/
@@ -147,7 +147,7 @@
         font-size: 15px;
         width: 300px;
         height: 335px;
-        margin: 55px auto 50px auto;
+        margin: 55px auto 150px auto;
         border-radius: 3px;
         border: 1px solid #dafafa;
         padding: 10px 15px;

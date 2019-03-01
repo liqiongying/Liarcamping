@@ -18,10 +18,14 @@ var hub = new Vue();
 export default hub;
 Vue.use(VeeValidate);
 Vue.use(VueResource);
+// import Toastr from 'vue-toastr';
+// require('vue-toastr/dist/vue-toastr.css');
+//
+// Vue.component('vue-toastr',Toastr);
 import './assets/css/bootstrap.min.css'
-// import './assets/css/cheater-index.css'
-// import './assets/css/cheater-header.css'
-// import './assets/css/cheater-footer.css'
+import './assets/css/cheater-index.css'
+import './assets/css/cheater-header.css'
+import './assets/css/cheater-footer.css'
 import './assets/js/jquery.min.js'
 import './assets/js/bootstrap.min.js'
 Vue.config.productionTip = false;

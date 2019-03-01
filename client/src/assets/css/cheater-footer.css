@@ -16,12 +16,12 @@ html, body {
 
 }
 .all-container {
-    bottom: 0px;
-    min-height: 100%;
-    position: relative;}
+    /*bottom: 0px;*/
+    /*min-height: 100%;*/
+    /*position: relative;*/
+}
 .main-content {
     height: auto;
-    padding-bottom: 30px;
 }
 #down{
     margin-right: 0px;

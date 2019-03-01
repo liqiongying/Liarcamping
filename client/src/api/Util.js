@@ -1,5 +1,18 @@
 import axios from 'axios'
+// import toastr from 'toastr'
+
 const Util={
+    showMsg (message){
+        let content, type;
+        if (typeof message === 'string') {
+            content = message;
+            type = 'error'
+        } else {
+            content = message.content;
+            type = message.type
+        }
+        toastr[type](content)
+    },
     searchAPI(router,searchText){
         if(searchText!==""){
             router.push(`/search/${searchText}`)
@@ -32,6 +45,15 @@ const Util={
                 content_id:content_id,
                 uid:uid
             }})
+    },
+    getComment(content_id){
+        return axios({
+            method: 'get',
+            url: 'http://127.0.0.1:3000/getComment',
+            params:{
+                content_id:content_id
+            }
+            })
     }
 };
 export default Util;

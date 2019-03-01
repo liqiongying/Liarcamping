@@ -74,32 +74,9 @@ var fn_like = async (ctx, next) =>{
         data:content
     }
 };
-var fn_comment = async (ctx, next) =>{
-    let content_id = ctx.request.body.content_id;
-    let uid=ctx.request.body.uid;
-    if(!uid){
-        return ctx.body={
-            code:0,
-            data:"还没有登陆，不能评论哦！"
-        }
-    }
-    let content=await Models.Contents.findById(content_id);
-    if(!content){
-        return ctx.body={
-            code:2,
-            data:"没有内容，不能评论哦！"
-        }
-    }
-    // content.set('comment_count',content.get('comment_count')+1);
-    // content.save();
-    ctx.body={
-        code:1,
-        data:content
-    }
-};
 module.exports = {
     'GET /': fn_root,
     'POST /like':fn_like,
-    'POST /comment':fn_comment,
+
 
 };
