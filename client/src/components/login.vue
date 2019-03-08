@@ -3,7 +3,7 @@
 
         <div id="login-top" class="navbar navbar-default login-top">
             <a class="system"><router-link to="/">骗子集中营</router-link></a>
-            <a class="welcome"> 欢迎您！</a>
+            <span class="welcome" > 欢迎您！</span>
 
         </div>
         <div class="white"></div>
@@ -45,6 +45,7 @@
 
             </form>
         </div>
+        <div class="white"></div>
 
     </div>
 </template>
@@ -112,6 +113,7 @@
         /*max-height: 200px;*/
         background-image: url("../assets/img/bg.jpg");
         height:fit-content;
+        background-size: cover;
     }
     /*body{*/
     /*background-image: url("../img/greybg.jpg");*/
@@ -127,7 +129,7 @@
     #login-top{
         background-image: url("../assets/img/bg.jpg");
         background-size: 1390px 700px;
-
+        border:none;
         opacity: 1;
         width: 100%;
         height: 50px;
@@ -137,7 +139,11 @@
 
     #login-top a{
         font-weight: bold;
-        /*color: #ffffff;*/
+        color: #eeeeee;
+    }
+    #login-top a:hover{
+        text-decoration: none;
+        color: #b2c5d4;
     }
 
     #login-box{
@@ -147,7 +153,7 @@
         font-size: 15px;
         width: 300px;
         height: 335px;
-        margin: 55px auto 150px auto;
+        margin: 5px auto auto auto;
         border-radius: 3px;
         border: 1px solid #dafafa;
         padding: 10px 15px;
@@ -167,7 +173,7 @@
         position: relative;
         left: 135px;
         bottom: 38px;
-        margin-bottom: 10px;
+        /*margin-bottom: 10px;*/
         margin-bottom: 0;
     }
 

@@ -1,7 +1,7 @@
 <template>
     <div class="panel panel-default showmethod">
 
-        <div class="panel-heading">你应该知道的防骗术</div>
+        <div class="panel-heading" style="color: #74bfdd">你应该知道的防骗术</div>
         <!--<div class="panel-body">
 
         </div>-->

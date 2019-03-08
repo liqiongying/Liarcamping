@@ -73,7 +73,7 @@ const fn_getcomment=async(ctx,next)=>{
         }
     }else{
 
-         let data=await   Models.Comments.findAndCountAll({
+         let data=await Models.Comments.findAndCountAll({
                 limit:15,
 
              where:{

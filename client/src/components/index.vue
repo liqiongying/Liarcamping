@@ -9,16 +9,36 @@
        </div>
 
        <!--分享-->
-       <div class="panel panel-default">
-           <div class="panel-body" id="share">
-               让骗子不再得逞，让更多的人知道我们吧
+       <social-sharing url="https://vuejs.org/"
+                       title="骗子集中营"
+                       description="Intuitive, Fast and Composable MVVM for building interactive interfaces."
+                       quote="Vue is a progressive framework for building user interfaces."
+                       hashtags="vuejs,javascript,framework"
+                       twitter-user="vuejs"
+                       v-cloak inline-template>
+           <div class="panel panel-default">
+               <div class="panel-body" id="share">
+                   让骗子不再得逞，让更多的人知道我们吧
 
-               <!--分享图标-->
-               <button type="button" class="btn btn-default" aria-label="Left Align">
-                   <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
-               </button>
+                   <!--分享图标-->
+                   <span style="cursor: pointer"><network  network="weibo" id="weibo">
+                           <i class="fa fa-fw fa-weibo"></i> Weibo
+                       </network>
+                   </span>
+                   <span style="cursor: pointer">
+                   <network network="email" id="email">
+                       <i class="fa fa-fw fa-envelope"></i> Email
+                   </network>
+                   </span>
+                   <span style="cursor: pointer;">
+                   <network  network="facebook" id="facebook">
+                       <i class="fa fa-fw fa-facebook"></i> Facebook
+                   </network>
+                   </span>
+               </div>
+
            </div>
-       </div>
+       </social-sharing>
 
        <!--下面展示-->
        <div class="row">
@@ -26,7 +46,6 @@
                <!--防骗术-->
             <methods></methods>
                <!--广告位-->
-               @@include('include/ads.html')
            </div>
            <div class="col-md-9">
 
@@ -53,9 +72,10 @@
                    <div class="panel-body card" >
 
                        <div class="panel-heading">
-                           <h3 class="panel-title">
+                           <router-link :to="{path:'/ContentDetail',query:{content:content}}"
+                            class="panel-title " style="white-space : nowrap;overflow: hidden;text-overflow : ellipsis">
                                {{content.title}}
-                           </h3>
+                           </router-link>
                        </div>
                        <hr style="margin-bottom: 0px;
                             margin-top: 0px">
@@ -66,13 +86,13 @@
                            <button type="submit" class="btn btn-default ">
                                {{content.create_time}}
                            </button>
-                           <button type="reset" class="btn btn-default" style="float: right">
-                               分享
-                           </button>
+                           <!--<button type="reset" class="btn btn-default" style="float: right">-->
+                               <!--分享-->
+                           <!--</button>-->
 
                        </div>
                        <div class="panel-body" style="padding: 15px 0px 0px">
-                           <a class="list-group-item" style="height: auto" href="cheater-content.html">
+                           <a class="list-group-item" style="height: auto" >
                                {{content.summary}}
                            </a>
 
@@ -109,7 +129,7 @@
                            <li v-for="p of pages" :class="{'active':p==this_page}"
                                :key="p"
                                @click="getData(p)">
-                               <span>{{p}}</span>
+                               <span style="cursor: pointer">{{p}}</span>
                            </li>
 
                            <li @click="getData(Math.min(pages,this_page+1))" :class="{'disabled':this_page==pages}">
@@ -193,7 +213,7 @@
                 crossDomain: true
             }).then(({data})=>{
             // console.log(data);
-                if(data.code==1){
+                if(data.code===1){
                     alert("点赞成功！");
                     this.contents.forEach(content=>{
                         if(content.id==data.data.id){
@@ -202,6 +222,10 @@
                     });
 
                 }else{
+                    if(data.code===0){
+                        alert(data.data);
+                    this.$router.push("/login");
+                    }
                     alert(data.data);
                 }
             })
@@ -240,6 +264,9 @@
 </script>
 
 <style scoped>
+.net{
+    cursor:pointer;
+}
 .loading-container{
     position: absolute;
     width: 100%;

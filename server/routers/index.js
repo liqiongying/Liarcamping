@@ -24,7 +24,8 @@ var fn_root = async (ctx, next) => {
                 summary:d.summary,
                 create_time:moment(d.createdAt).format('YYYY-MM-DD HH:mm:ss'),
                 like_count:d.like_count,
-                comment_count:d.comment_count
+                comment_count:d.comment_count,
+                description:d.description
             }
         }
     )};

@@ -7,6 +7,8 @@ import reset from '@/components/reset'
 import comment from '@/components/comment'
 import search from '@/components/Search'
 import SearchContent from '@/page/SearchContent'
+import ContentDetail from '@/page/ContentDetail'
+import rules from '@/page/rules'
 import main from '@/components/main'
 import uploadtails from '@/components/uploadtails'
 Vue.use(Router);
@@ -43,6 +45,11 @@ export default new Router({
                     path:'uploadtails',
                     component:uploadtails
 
+                },
+                {
+                    path:'ContentDetail',
+                    component:ContentDetail
+
                 }
             ]
         },{
@@ -53,6 +60,10 @@ export default new Router({
             path: '/register',
             // name: '/register',
             component: register
+        },{
+            path: '/rules',
+            // name: '/register',
+            component: rules
         },{
             path: '/reset',
             // name: '/reset',

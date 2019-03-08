@@ -8,7 +8,7 @@
                         <textarea class="form-control" placeholder="评价请注意用词" v-model="commentcontent"></textarea>
 
                     </div>
-                    <div class="form-group text-right" style="padding-right: 15px">
+                    <div class="form-group text-right" style="padding: 15px">
                         <button class="btn btn-default " @click="submitComment">
                             确认并提交
                         </button>
@@ -90,7 +90,15 @@
            })
             },
             submitComment(){
+                var uid=this.$cookie.getCookie('uid');
+                // console.log(uid);
+                if(uid===''){
+                    alert("请先登录哦！");
+                    this.$router.push("/login");
 
+                    return;
+
+                }
                 // alert(this.content_id);
                 if(this.commentcontent===''){
                     alert("评论不能为空!");
@@ -103,14 +111,14 @@
                     url: 'http://127.0.0.1:3000/contentcomment',
                     data: {
                         content_id:this.content_id,
-                        uid:this.$cookie.getCookie('uid'),
+                        uid:uid,
                         content:this.commentcontent
                     }}).then(({data})=>{
-                    console.log(data.code);
+                    // console.log(data.code);
 
                     if(data.code===1){
                         alert("评论成功");
-                        console.log(data);
+                        // console.log(data);
                         this.comments=data.data;
                         this.commentcontent='';
                         // this.$router.go(-1);

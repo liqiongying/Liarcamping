@@ -1,12 +1,13 @@
 <template>
-    <div id="login_container">
+    <div id="reset-container">
         <div id="login-top" class="navbar navbar-default login-top">
-            <a class="system">骗子集中营</a>
-            <a class="welcome"> 欢迎您！</a>
+            <a class="system"><router-link to="/">骗子集中营</router-link></a>
+            <span class="welcome"> 欢迎您！</span>
 
         </div>
+        <div class="white"></div>
 
-        <div id="login-box" style="margin-top: 150px;height: auto">
+        <div id="login-box" style="height: auto">
 
         <!--重置表单-->
         <form method="POST"  @submit.prevent="validateForm">
@@ -39,18 +40,7 @@
                     <p>密码不一致</p>
                 </div>
             </div>
-            <!--&lt;!&ndash;邮箱验证&ndash;&gt;-->
-            <!--<div class="form-group" >-->
-            <!--<label  style="display: block">输入验证码:</label>-->
-            <!--<input type="text" class="form-control" name="code" placeholder="验证码"-->
-            <!--style="width: 50%;display: inline-block" v-validate="'required|verify|length:6'"-->
-            <!--data-vv-validate-on="blur">-->
-            <!--<span class="help-block" v-show="errors.has('code')">验证码有误</span>-->
-            <!--<button type="button" class="btn btn-default" style="float: right"-->
-            <!--@click="register_verify($event)"  >-->
-            <!--{{register_show}}-->
-            <!--</button>-->
-            <!--</div>-->
+
             <!--邮箱验证-->
             <div class="form-group">
                 <label style="display: block">输入验证码:</label>
@@ -62,6 +52,8 @@
                     {{register_show}}
                 </button>
             </div>
+            <div style="height: 25px"></div>
+
             <div class="form-group" >
 
                 <button type="submit" class="form-group form-group-button another-btn">重置</button>
@@ -70,6 +62,8 @@
 
         </form>
         </div>
+        <div class="white"></div>
+
     </div>
 </template>
 
@@ -196,6 +190,132 @@
 </script>
 
 <style scoped>
+
+    #reset-container{
+        /*max-height: 200px;*/
+        background-image: url("../assets/img/bg.jpg");
+        height:fit-content;
+        background-size: cover;
+    }
+
+
+
+    #login-top{
+        background-image: url("../assets/img/bg.jpg");
+        background-size: 1390px 700px;
+        border:none;
+        opacity: 1;
+        width: 100%;
+        height: 50px;
+        position: fixed;
+        top: 0;
+    }
+
+    #login-top a{
+        font-weight: bold;
+        color: #eeeeee;
+    }
+    #login-top a:hover{
+        text-decoration: none;
+        color: #b2c5d4;
+        cursor: pointer;
+    }
+
+    #login-box{
+        background-image: url("../assets/img/sunny.jpg");
+        background-size: 2500px 1000px;
+        opacity: 1;
+        font-size: 15px;
+        width: 300px;
+        height: 335px;
+        margin: 5px auto auto auto;
+        border-radius: 3px;
+        border: 1px solid #dafafa;
+        padding: 10px 15px;
+        background-color: #ffffff;
+    }
+    #login-box:hover{
+        box-shadow: #cccccc 5px 10px 20px;
+        cursor: pointer;
+    }
+
+    #login-btn{
+        width: 89px;
+        height: 25px;
+        text-align: left;
+        margin-top: 5px;
+        margin-left: 0;
+        position: relative;
+        left: 135px;
+        bottom: 38px;
+        /*margin-bottom: 10px;*/
+        margin-bottom: 0;
+    }
+
+    #another-btn{
+        width: 244px;
+        height: 40px;
+        text-align:center;
+        margin-top: 4px;
+        margin-left: 22px;
+        position: relative;
+        right: 11px;
+        margin-bottom: 4px;
+    }
+
+    .toLogin a{
+        margin-left: 10px;
+        text-decoration: none;
+        font-size: 12px;
+        color: #666666;
+    }
+    .form-group{
+        margin: 1px 10px;
+    }
+    .title{
+        font-size:15px ;
+    }
+
+
+    .system{
+        font-size: 30px;
+        margin:3px 18px;
+        float: left;
+        color:#000000
+    }
+
+    .welcome{
+        float: right;
+        margin-top: 14px;
+        font-size: 16px;
+    }
+
+    .white{
+        height: 150px;
+    }
+    .forgetPsd{
+        margin-left:22px;
+        color: #0f0f0f;
+    }
+
+    .register{
+        margin-left: 65px;
+        color: #0f0f0f;
+    }
+    .form-group-button{
+        width: 5px;
+    }
+    .small{
+        font-size: 13px;
+        position: relative;
+        left: 5px;
+        margin-top: 0;
+        padding-top: 20px;
+    }
+    #remember{
+        margin-top: 15px;
+        display: none;
+    }
     .another-btn{
         width: 244px;
         height: 40px;
@@ -206,4 +326,7 @@
         right: 11px;
         margin-bottom: 4px;
     }
+    /*#login-container{*/
+    /*background: #00b3ee;*/
+    /*}*/
 </style>

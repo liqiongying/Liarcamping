@@ -1,3 +1,4 @@
+ npx nodemon启用nodemon，不是全局的需要加npx
 # Liarcamping
 a website to hit the liars
 <<<<<<< HEAD

@@ -2,17 +2,7 @@ import axios from 'axios'
 // import toastr from 'toastr'
 
 const Util={
-    showMsg (message){
-        let content, type;
-        if (typeof message === 'string') {
-            content = message;
-            type = 'error'
-        } else {
-            content = message.content;
-            type = message.type
-        }
-        toastr[type](content)
-    },
+
     searchAPI(router,searchText){
         if(searchText!==""){
             router.push(`/search/${searchText}`)

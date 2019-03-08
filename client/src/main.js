@@ -3,9 +3,16 @@ import App from './App.vue'
 import router from './router'
 import VueResource from 'vue-resource'
 import VeeValidate from 'vee-validate'
+import messages from 'vee-validate/dist/locale/zh_CN'
+
 import { setCookie,getCookie,delCookie } from './assets/js/cookie.js'
 import VueLazyload from 'vue-lazyload'
 import store from './store'
+import Croppa from 'vue-croppa'
+import SocialSharing from 'vue-social-sharing'
+
+Vue.use(Croppa)
+ Vue.use(SocialSharing)
 Vue.use(VueLazyload,{
     loading: 'assets/img/sunny.jpg'
 });
@@ -16,7 +23,12 @@ Vue.prototype.$cookie={
 };
 var hub = new Vue();
 export default hub;
-Vue.use(VeeValidate);
+Vue.use(VeeValidate,{
+    locale:'zh_CN',
+    dictionary:{
+        zh_CN:{messages}
+    }
+});
 Vue.use(VueResource);
 // import Toastr from 'vue-toastr';
 // require('vue-toastr/dist/vue-toastr.css');

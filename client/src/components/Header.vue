@@ -214,6 +214,11 @@
             else
                 this.login=true;
         },
+        watch:{
+            function () {
+                return this.$cookie.getCookie('username')
+            }
+        },
         methods:{
             ...mapMutations({
                 setContent: 'SET_CONTENT'

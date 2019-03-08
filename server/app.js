@@ -5,6 +5,9 @@ const serve = require('koa-static');
 const cors = require('koa2-cors');
 const render = require('koa-art-template');
 const path=require('path');
+const fs=require('fs');
+// var formidable = require('koa-formidable')
+// app.use(formidable());
 const Models=require('./models/index');
 const session = require('koa-session');
 const app =new Koa();

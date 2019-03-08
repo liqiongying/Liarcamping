@@ -30,8 +30,8 @@
                                     </label>
                                     <div class="col-sm-7">
                                         <input name="title"  class="form-control"  placeholder="文章标题(50字以内)"
-                                               v-validate="'required|max:50'" data-vv-validate-on="blur" v-model="cheater.title">
-                                        <span v-show="errors.has('title')" class="small" style="color: red">标题不能为空，不能超过50字</span>
+                                               v-validate="'required|max:50|min:3'" data-vv-validate-on="blur" v-model="cheater.title">
+                                        <span v-show="errors.has('title')" class="small" style="color: red">{{errors.first('price')}}标题不能为空，不能超过50字，少于3位数</span>
 
                                     </div>
                                 </div>
@@ -53,9 +53,9 @@
                                     </label>
                                     <div class="col-sm-7">
                                         <input name="contact" class="form-control"  placeholder="微信号/电话/QQ号"
-                                               v-validate="'required|max:50'" data-vv-validate-on="blur" v-model="cheater.contact">
+                                               v-validate="'required|max:50|min:3'" data-vv-validate-on="blur" v-model="cheater.contact">
 
-                                        <span v-show="errors.has('contact')" class="small" style="color: red">联系方式不能为空，不能超过50个字</span>
+                                        <span v-show="errors.has('contact')" class="small" style="color: red">联系方式不能为空，不能超过50个字，少于3个字</span>
 
                                     </div>
                                 </div>
@@ -65,9 +65,9 @@
                                     </label>
                                     <div class="col-sm-7">
                                         <textarea class="form-control" rows="10" name="tails" placeholder="时间地点起因经过结果，回忆得越详细越好(1万字以内)"
-                                                  v-validate="'required|max:10000'" data-vv-validate-on="blur" v-model="cheater.description">
+                                                  v-validate="'required|max:10000|min:50'" data-vv-validate-on="blur" v-model="cheater.description">
                                         </textarea>
-                                        <span v-show="errors.has('tails')" class="small" style="color: red">故事不能为空，不能超过1万个字</span>
+                                        <span v-show="errors.has('tails')" class="small" style="color: red">故事不能为空，不能超过1万个字，少于50个字</span>
 
                                     </div>
                                 </div>
@@ -77,9 +77,9 @@
                                     </label>
                                     <div class="col-sm-7">
                                         <input name="money" class="form-control"  placeholder="金额(尽量用单位，如10000元写1万元)"
-                                               v-validate="'required|max:20'" data-vv-validate-on="blur" v-model="cheater.money">
+                                               v-validate="'required|max:20|min:2'" data-vv-validate-on="blur" v-model="cheater.money">
 
-                                        <span v-show="errors.has('contact')" class="small" style="color: red">损失金钱不能为空，不能超过20位</span>
+                                        <span v-show="errors.has('contact')" class="small" style="color: red">损失金钱不能为空，字数不能超过20位，少于2位</span>
 
                                     </div>
                                 </div>
@@ -88,21 +88,31 @@
                                         上传证据
                                     </label>
                                     <div class="col-sm-7">
+                                        <croppa canvas-color="wheat"
+                                                v-model="myCroppa1"
+                                                :accept="'image/*'"
+                                                :file-size-limit="2097152"
+                                                @file-type-mismatch="onFileTypeMismatch"
+                                                @file-size-exceed="onFileSizeExceed"
+                                                :width="198"
+                                                :height="198"
+                                                placeholder="请点击这里上传" :show-loading="true">
 
+                                        </croppa>
 
-                                          <!--缩略图-->
-                                        <div class="row">
-                                            <div class="col-xs-6 col-md-3">
-                                                <label class="thumbnail" for="upload" >
-                                                    <img  height="258" width="258" :src="src"/>
+                                        <!--&lt;!&ndash;缩略图&ndash;&gt;-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-xs-6 col-md-3">-->
+                                                <!--<label class="thumbnail" for="upload" >-->
+                                                    <!--<img  height="258" width="258" :src="src"/>-->
 
-                                                </label>
-                                                <input type="file" style="display: none" id="upload" multiple class="file"
-                                                       accept="image/gif,image/jpeg,image/jpg,image/png" @change="uploadfile"/>
+                                                <!--</label>-->
+                                                <!--<input type="file" style="display: none" id="upload" multiple class="file"-->
+                                                       <!--accept="image/gif,image/jpeg,image/jpg,image/png" @change="uploadfile"/>-->
 
-                                            </div>
+                                            <!--</div>-->
 
-                                        </div>
+                                        <!--</div>-->
 
                                     </div>
                                 </div>
@@ -132,7 +142,11 @@
                                         故事概述
                                     </label>
                                     <div class="col-sm-7">
-                                        <textarea class="form-control" rows="10" placeholder="决定读者是否会阅读全文的内容概述" v-model="cheater.summary"></textarea>
+                                        <textarea name="summary" class="form-control" rows="10" placeholder="决定读者是否会阅读全文的内容概述"
+                                                  v-validate="'required|max:50|min:2'" data-vv-validate-on="blur"
+                                                  v-model="cheater.summary"></textarea>
+                                        <span v-show="errors.has('summary')" class="small" style="color: red">故事概述不能为空，字数不能超过50位，少于2位</span>
+
                                     </div>
                                 </div>
 
@@ -160,14 +174,16 @@
 </template>
 
 <script>
-
+    import 'vue-croppa/dist/vue-croppa.css'
     import {mapGetters}from 'vuex'
     import axios from 'axios';
-
+import Util from '../api/Util'
     export default {
         data(){
             return {
-                src: require('../assets/img/addfile.png'),
+                // src: require('../assets/img/addfile.png'),
+                myCroppa1: {}, myCroppa2: {},myCroppa3: {},
+                myCroppa4: {},myCroppa5: {},myCroppa6: {},
                 cheater:{
                     title:'',
                     summary:'',
@@ -177,6 +193,7 @@
                     contact:'',
                     proof:[],
                     uid:''
+
                 }
 
             }
@@ -198,6 +215,16 @@
         },
 
         methods:{
+            onFileTypeMismatch (file) {
+                alert('文件格式不正确，请选择 jpeg 或png 格式')
+            },
+            onFileSizeExceed (file) {
+                if(file.size>2097152){
+                    alert('文件大小不能超过2MB.')
+
+                }
+                console.log(file);
+            },
             show(){
                 this.$validator.validateAll().then((result) => {
                     // console.log(this.cheater);
@@ -206,21 +233,49 @@
 
                         this.cheater.uid=this.uid;
                         // eslint-disable-next-line
-                        axios({
-                            method: 'post',
-                            url: 'http://127.0.0.1:3000/expose',
-                            data: this.cheater
-                        }).then(data=>{
-                            if(data.data.success){
-                                alert(data.data.message);
-                                // console.log(data.data.success);
-                                this.$router.push('/login');
-                            }
-                        });
-                        return;
+                        if (!this.myCroppa1.hasImage()) {
+                            alert('no image to upload')
+                            return
+                        }
+                        this.myCroppa1.generateBlob((blob) => {
+                            // write code to upload the cropped image file (a file is a blob)
+                            var fd = new FormData();
+                            fd.append('proof', blob,'_proof_'+this.cheater.uid);
+                            fd.append('title',this.cheater.title);
+                            fd.append('name',this.cheater.name);
+                            fd.append('contact',this.cheater.contact);
+                            fd.append('description',this.cheater.description);
+                            fd.append('money',this.cheater.money);
+                            fd.append('summary',this.cheater.summary);
+                            fd.append('uid',this.cheater.uid);
+
+                            console.log(fd.get("img"),this.cheater);
+                            axios({
+                                method: 'post',
+                                url: 'http://127.0.0.1:3000/expose',
+                                // data: {cheater:this.cheater,img:fd},
+                                data:fd,
+                                processData: false,
+                                contentType: false,
+                            }).then(data=>{
+                                console.log(data);
+
+                                if(data.data.success){
+                                    alert(data.data.message);
+                                    console.log(data.data);
+                                    this.$router.push('/');
+                                }
+                            }).catch(function (error) {
+                                console.log(error);
+                            });
+                            return;
+                        }, 'image/jpeg', 0.8)
+                        console.log(result);
+
+
                     }
                     console.log(result);
-                    alert(data.data.message);
+                    // alert(data.data.message);
                 });
 
             },
@@ -244,7 +299,11 @@
 
 
 
+            },
+            uploadCroppedImage() {
             }
+
+
         },
         name: "uploadtails"
     }

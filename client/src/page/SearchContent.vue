@@ -35,7 +35,7 @@
                 this.$router.push('/index');
                 return;
             }
-            // console.log(this.cheatercomment);
+            console.log(this.content);
 
         },
 

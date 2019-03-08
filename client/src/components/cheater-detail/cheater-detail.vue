@@ -6,33 +6,31 @@
                     {{content.title}}
                 </h3>
             </div>
-            <div class="form-group " style="padding-top: 15px">
-                <button  class="btn btn-default " >
-                    {{time}}
-                </button>
-                <button  class="btn btn-default" style="float: right">
-                    分享
-                </button>
 
-            </div>
             <div class="panel-body">
-                <div style="height: auto;line-height: 1.6;" >
+                <div style="height: auto;line-height: 2em;
+                column-count: 2;column-gap: 3em" >
                     {{content.description}}
                 </div>
-
-
-
-            </div>
-            <div class="form-group "v-if="!ifcomment" >
-                <button type="button" class="btn btn-default " @click="love(content_id,uid)">
+                <div  style="padding: 10px 0px;vertical-align: center">
+                    <span  >
+                        发布于：{{time}}
+                    </span>
+                        <span  type="button" class="btn btn-default like" @click="love(content_id,uid)">
                     点赞({{content.like_count}})
-                </button>
-                <button type="button" class="btn btn-default" style="float: right"@click="click_comment(content_id,uid)">
-                    评论({{content.comment_count}})
-                </button>
+                </span>
+                    </div>
+
+
+
             </div>
+
+                <!--<button type="button" class="btn btn-default" style="float: right"@click="click_comment(content_id,uid)">-->
+                    <!--评论({{content.comment_count}})-->
+                <!--</button>-->
+            <!--</div>-->
         </div>
-        <clickComment v-if="show" :content_id="content_id"></clickComment>
+        <clickComment  :content_id="content_id"></clickComment>
     </div>
 </template>
 
@@ -81,10 +79,10 @@
                 result.then(({data})=>{
                     if(data.code==1) {
                         alert("点赞成功！");
-                        if (this.content_id == data.data.id) {
+                        if (this.content_id === data.data.id) {
                             this.like_count = data.data.like_count;
                         }
-                    }else if(data.code==0){
+                    }else if(data.code===0){
                         alert(data.data);
                         this.$router.push('/login');
                     }else{
@@ -92,31 +90,34 @@
                     }
                 });
 
-            },
-            click_comment(content_id,uid){
-                const result=Util.comment(content_id,uid);
-                result.then(({data})=>{
-                    if(data.code==1){
-                        if(this.ifcomment){
-                            this.show=false;
-                        }else{
-                            this.show=true;
-
-                        }
-                    }else if(data.code==0){
-                        alert(data.data);
-                        this.$router.push('/login');
-                    }else{
-                        alert(data.data);
-
-                    }
-                })
-
             }
+            // click_comment(content_id,uid){
+            //     const result=Util.comment(content_id,uid);
+            //     result.then(({data})=>{
+            //         if(data.code==1){
+            //             if(this.ifcomment){
+            //                 this.show=false;
+            //             }else{
+            //                 this.show=true;
+            //
+            //             }
+            //         }else if(data.code==0){
+            //             alert(data.data);
+            //             this.$router.push('/login');
+            //         }else{
+            //             alert(data.data);
+            //
+            //         }
+            //     })
+            //
+            // }
         }
     }
 </script>
 
 <style scoped>
-
+.like{
+    position:absolute;
+    right:40px;
+}
 </style>
