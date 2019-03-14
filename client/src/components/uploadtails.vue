@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-3">
                 <!--广告位-->
-                @@include('include/ads.html')
+
             </div>
             <div class="col-md-6">
                 <!--曝光个人信息填写-->
@@ -17,12 +17,7 @@
                     <div class="panel-body">
                         <div>
                             <form class="form-horizontal" method="post" action="index.vue" enctype="multipart/form-data" @submit="show">
-                                <!--<div class="form-group">-->
-                                    <!--<label class="col-sm-4 control-label">骗子类型</label>-->
-                                    <!--<div class="col-sm-6">-->
-                                        <!--<p class="form-control-static">个人</p>-->
-                                    <!--</div>-->
-                                <!--</div>-->
+
                                 <!--标题-->
                                 <div class="form-group">
                                     <label for="inputPassword" class="col-sm-4 control-label">
@@ -97,7 +92,6 @@
                                                 :width="198"
                                                 :height="198"
                                                 placeholder="请点击这里上传" :show-loading="true">
-
                                         </croppa>
 
                                         <!--&lt;!&ndash;缩略图&ndash;&gt;-->
@@ -182,8 +176,8 @@ import Util from '../api/Util'
         data(){
             return {
                 // src: require('../assets/img/addfile.png'),
-                myCroppa1: {}, myCroppa2: {},myCroppa3: {},
-                myCroppa4: {},myCroppa5: {},myCroppa6: {},
+                myCroppa1: {},
+                // myCroppa2: {},myCroppa3: {}, myCroppa4: {},myCroppa5: {},myCroppa6: {},
                 cheater:{
                     title:'',
                     summary:'',
@@ -248,12 +242,9 @@ import Util from '../api/Util'
                             fd.append('money',this.cheater.money);
                             fd.append('summary',this.cheater.summary);
                             fd.append('uid',this.cheater.uid);
-
-                            console.log(fd.get("img"),this.cheater);
                             axios({
                                 method: 'post',
                                 url: 'http://127.0.0.1:3000/expose',
-                                // data: {cheater:this.cheater,img:fd},
                                 data:fd,
                                 processData: false,
                                 contentType: false,

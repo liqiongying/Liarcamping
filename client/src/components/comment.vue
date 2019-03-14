@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-3">
                 <!--广告位-->
-                @@include('include/ads.html')
+
             </div>
             <div class="col-md-6">
                <!--<cheaterdetail :title="title" :time="time" :description="description" :like_count="like_count" :comment_count="comment_count"-->
@@ -14,7 +14,7 @@
                 <cheaterdetail :content="cheatercomment">
 
                 </cheaterdetail>
-                <clickComment :content_id="content_id" ></clickComment>
+                <!--<clickComment :content_id="content_id" ></clickComment>-->
             </div>
             <div class="col-md-3">
 

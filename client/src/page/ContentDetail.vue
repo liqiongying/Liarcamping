@@ -10,7 +10,7 @@
         </div>
         <div class="col-md-3">
             <!--广告位-->
-            @@include('include/ads.html')
+
         </div>
 
     </div>

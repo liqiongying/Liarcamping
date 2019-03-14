@@ -198,8 +198,6 @@ var fn_delete=async(ctx,next)=>{
             username:username
         }
     }).then(function(result){
-        console.log('destroy'+username);
-        console.log(result);
         ctx.body={
             success:true,
             message:"注销成功"

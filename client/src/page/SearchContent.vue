@@ -5,7 +5,7 @@
     <div class="row">
             <div class="col-md-3">
                 <!--广告位-->
-                @@include('include/ads.html')
+
             </div>
             <div class="col-md-6">
                 <cheater_detail :content="content"></cheater_detail>
@@ -13,7 +13,7 @@
             </div>
             <div class="col-md-3">
                 <!--广告位-->
-                @@include('include/ads.html')
+
             </div>
 
     </div>

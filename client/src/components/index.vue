@@ -121,18 +121,16 @@
                <div v-show="contents.length">
                    <nav class="text-center">
                        <ul class="pagination">
-                           <li @click="getData(Math.max(1,this_page-1))" :class="{'disabled':this_page==1}">
+                           <li @click="getData(Math.max(1,this_page-1))" :class="{'disabled':this_page===1}">
                                <a href="#" aria-label="Previous">
                                    <span aria-hidden="true">&laquo;</span>
                                </a>
                            </li>
-                           <li v-for="p of pages" :class="{'active':p==this_page}"
-                               :key="p"
+                           <li v-for="p of pages" :class="{'active':p===this_page}" :key="p"
                                @click="getData(p)">
                                <span style="cursor: pointer">{{p}}</span>
                            </li>
-
-                           <li @click="getData(Math.min(pages,this_page+1))" :class="{'disabled':this_page==pages}">
+                           <li @click="getData(Math.min(pages,this_page+1))" :class="{'disabled':this_page===pages}">
                                <a href="#" aria-label="Next">
                                    <span aria-hidden="true">&raquo;</span>
                                </a>

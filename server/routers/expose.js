@@ -38,7 +38,6 @@ var fn_expose=async(ctx,next)=>{
                 mkdirs('upload/proof', function () {
                     fs.renameSync(oldpath,newpath); //重命名
                     resolve({fields:fields,imgName:newfilename});
-                    // http://localhost:6001/public/upload/1513523744257_WX20171205-150757.png
                 });
 
             })

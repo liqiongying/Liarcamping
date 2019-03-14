@@ -8,10 +8,7 @@ var fn_root = async (ctx, next) => {
     let offset=(this_page-1)*per_page;
     let data= await Models.Contents.findAndCountAll({
         limit:3,
-        offset,
-        // include:{
-        //     model:Models.Comments
-        // }
+        offset
     });
      ctx.body ={
         code:0,
@@ -32,11 +29,7 @@ var fn_root = async (ctx, next) => {
 };
 var fn_like = async (ctx, next) =>{
     let content_id = ctx.request.body.content_id;
-    // let uuid=ctx.session.uuid;
-    // console.log("用户:"+uuid);
-
     let uid=ctx.request.body.uid;
-    // console.log("用户:"+uid);
     if(!uid){
         return ctx.body={
             code:0,

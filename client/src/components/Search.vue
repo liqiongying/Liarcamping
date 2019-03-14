@@ -16,28 +16,8 @@
         </div>
         <div class="col-md-3" style="position: relative">
             <!--防骗术-->
-            <div class="panel panel-default showmethod">
+            <methods></methods>
 
-                <div class="panel-heading">你应该知道的防骗术</div>
-                <!--<div class="panel-body">
-
-                </div>-->
-                <div class="list-group">
-                    <a href="cheater-content.html" class="list-group-item">
-                        Cras justo odio
-                    </a>
-                    <a href="cheater-content.html" class="list-group-item">Dapibus ac facilisis in</a>
-                    <a href="cheater-content.html" class="list-group-item">Dapibus ac facilisis in</a>
-                    <a href="cheater-content.html" class="list-group-item">Dapibus ac facilisis in</a>
-
-                    <a href="cheater-content.html" class="list-group-item">Dapibus ac facilisis in</a>
-                    <a href="cheater-content.html" class="list-group-item">Morbi leo risus</a>
-                    <a href="cheater-content.html" class="list-group-item">Porta ac consectetur ac</a>
-                    <a href="cheater-content.html" class="list-group-item">Vestibulum at eros</a>
-                </div>
-            </div>
-            <!--广告位-->
-            @@include('include/ads.html')
         </div>
 
 
@@ -46,6 +26,7 @@
 </template>
 
 <script>
+    import methods from './methods'
     import Loading from '../base/loading'
     import Util from './../api/Util'
     import SearchToolBar from './SearchToolBar'
@@ -63,7 +44,8 @@
         components:{
             SearchToolBar,
             SearchResultItem,
-            Loading
+            Loading,
+            methods
         },
         name: "Search",
         data(){

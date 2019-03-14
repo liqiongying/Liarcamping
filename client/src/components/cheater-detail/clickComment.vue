@@ -12,7 +12,7 @@
                         <button class="btn btn-default " @click="submitComment">
                             确认并提交
                         </button>
-                        <button type="reset" class="btn btn-default ">
+                        <button type="reset" class="btn btn-default "@click="clear">
                             清空
                         </button>
 
@@ -78,6 +78,9 @@
             },
         },
         methods:{
+            clear(){
+              this.commentcontent="";
+            },
             getData(){
                 console.log(this.content_id);
                 const result=Util.getComment(this.content_id)

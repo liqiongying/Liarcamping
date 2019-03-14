@@ -47,7 +47,6 @@ const fn_comment=async(ctx,next)=>{
             model:Models.Users
         },
         order:[[ 'id', 'DESC']]
-
     });
 
     ctx.body={
