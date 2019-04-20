@@ -83,7 +83,7 @@
             },
             getData(){
                 console.log(this.content_id);
-                const result=Util.getComment(this.content_id)
+                const result=Util.getComment(this.content_id);
                result.then(data=>{
                console.log(data.data.data);
                if(data.data.code===200){

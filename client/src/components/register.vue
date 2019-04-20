@@ -8,7 +8,6 @@
 
         </div>
         <div class="white"></div>
-
         <div id="login-box" style=" height: auto">
 
             <!-- 将form表单提交的窗口指向隐藏的ifrmae,并通过ifrmae提交数据。 -->
@@ -18,10 +17,13 @@
                 <hr style="margin-top: 5px">
                 <div class="form-group">
                     <label for="user">用户名</label>
+
                     <input type="text" class="form-control"
                            name="username" id="user" placeholder="你的昵称"
                            v-model="register.username" v-validate="'required|max:32'"
                            data-vv-validate-on="blur">
+
+
                     <span v-show="errors.has('username')" class="small" style="color: red">请输入用户名,字符不超过32位</span>
 
                 </div>
@@ -89,8 +91,10 @@
     import axios from 'axios';
     import moment from 'moment';
     import 'moment/locale/zh-cn'
+    // import KeepAlive from "../../../bower_components/vue/src/core/components/keep-alive";
     moment.locale('zh-cn');
     export default {
+        // components: {KeepAlive},
         created() {
             this.$validator.extend('verify', {
                 getMessage: (value) => {

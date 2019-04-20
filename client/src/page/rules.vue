@@ -24,7 +24,8 @@
             </p>
             <p> <strong>本协议的最终解释权归骗子集中营网站所有。
             </strong></p>
-
+            <!--<router-link to="/register"><div class="btn btn-default">我知道了</div></router-link>-->
+            <div class="btn btn-default" @click="know">我知道了</div>
         </div>
 
 
@@ -35,7 +36,12 @@
 
 <script>
     export default {
-        name: "rules"
+        name: "rules",
+        methods:{
+            know(){
+                this.$router.go(-1);
+            }
+        }
     }
 </script>
 

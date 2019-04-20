@@ -39,7 +39,7 @@ var fn_login = async (ctx, next) => {
     ctx.session.uuid=user.get('id');
 
     // console.log(ctx.session.uuid);
-
+// console.log(md5(12345));
 };
 
 var fn_register= async (ctx, next) => {
@@ -78,8 +78,6 @@ var fn_reset=async(ctx,next)=>{
             password:md5(password),
             updatedAt:new Date()
         }).then(result=>{
-            console.log('updated success!');
-            console.log(result);
             ctx.body={
                         success:true,
                         message:"密码重置成功"
@@ -193,6 +191,27 @@ var fn_email=async(ctx,next)=>{
 };
 var fn_delete=async(ctx,next)=>{
     var username=ctx.request.body.username.trim();
+    let user =await Models.Users.findOne({
+        'attributes':['id'],
+        where:{
+            username:username
+        }
+    });
+    console.log(user);
+    // console.log(user.get('id'));
+    // console.log(user.id);
+
+
+    await Models.Comments.destroy({
+        where:{
+            user_id:user.id
+        }
+    });
+    await Models.Likes.destroy({
+        where:{
+            user_id:user.id
+        }
+    });
     await Models.Users.destroy({
         where:{
             username:username
